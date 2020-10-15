@@ -9,6 +9,7 @@ Use [the changelog guidelines](https://git.io/polaris-changelog-guidelines) to f
 ### Enhancements
 
 Updated `Textfield` with a `type` of `number` to not render a spinner if step is set to `0` ([#3477](https://github.com/Shopify/polaris-react/pull/3477))
+- **`UnstyledButton`:** Added `loading` prop to apply `role` and `aria-busy` attributes ([#3494](https://github.com/Shopify/polaris-react/pull/3494))
 
 ### Bug fixes
 
@@ -21,5 +22,7 @@ Fixed `Filters` overflow ([#3532](https://github.com/Shopify/polaris-react/pull/
 ### Dependency upgrades
 
 ### Code quality
+
+- **`Button`:** Reduced redundant code repeated within `UnstyledButton` ([#3494](https://github.com/Shopify/polaris-react/pull/3494))
 
 ### Deprecations
