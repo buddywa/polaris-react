@@ -74,12 +74,13 @@ export function ThemeProvider({
   // Otherwise, setting a style property to `undefined` does not remove it from the DOM.
   const backgroundColor = customProperties['--p-background'] || '';
   const color = customProperties['--p-text'] || '';
-
+  console.log({isParentThemeProvider}, 'outside useeffect');
   useEffect(() => {
     if (isParentThemeProvider) {
       document.body.style.backgroundColor = backgroundColor;
       document.body.style.color = color;
     }
+    console.log({isParentThemeProvider}, 'inside useeffect');
   }, [backgroundColor, color, isParentThemeProvider]);
 
   const style = {...customProperties, ...(!isParentThemeProvider && {color})};
@@ -111,3 +112,5 @@ function getColorScheme(
     return colorScheme;
   }
 }
+
+ThemeProvider.whyDidYouRender = true;

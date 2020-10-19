@@ -1,4 +1,5 @@
 import React, {Children, isValidElement} from 'react';
+import whyDidYouRender from '@welldone-software/why-did-you-render';
 
 // Wraps `element` in `Component`, if it is not already an instance of
 // `Component`. If `props` is passed, those will be added as props on the
@@ -17,6 +18,12 @@ export function wrapWithComponent<P>(
   ) : (
     <Component {...props}>{element}</Component>
   );
+}
+
+if (process.env.NODE_ENV === 'development') {
+  whyDidYouRender(React, {
+    trackAllPureComponents: true,
+  });
 }
 
 // In development, we compare based on the name of the function because
